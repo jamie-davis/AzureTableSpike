@@ -1,0 +1,19 @@
+﻿1 le 1 => True                                                                                 
+1 le 1 => True                                                                                 
+1 le 1 => True                                                                                 
+2017-07-30T13:00:44 le 2017-07-30T13:00:44 => True                                             
+9e37e338-27b2-4f32-affa-dc74f017af1d le 9e37e338-27b2-4f32-affa-dc74f017af1d => True           
+test string le test string => True                                                             
+2 le 1 => False                                                                                
+1.01 le 1 => False                                                                             
+2 le 1 => False                                                                                
+2017-07-30T13:00:45 le 2017-07-30T13:00:44 => False                                            
+9e37e338-27b2-4f32-affa-dc74f017af1e le 9e37e338-27b2-4f32-affa-dc74f017af1d => False          
+west string le test string => False                                                            
+0 le 1 => True                                                                                 
+0.99 le 1 => True                                                                              
+0 le 1 => True                                                                                 
+2017-07-30T13:00:43 le 2017-07-30T13:00:44 => True                                             
+9e37e338-27b2-4f32-affa-dc74f017af1c le 9e37e338-27b2-4f32-affa-dc74f017af1d => True           
+sest string le test string => True                                                             
+                                                                                               

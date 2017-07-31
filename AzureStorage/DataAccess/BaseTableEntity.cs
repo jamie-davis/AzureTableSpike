@@ -7,7 +7,7 @@ using Microsoft.WindowsAzure.Storage.Table;
 namespace AzureStorage.DataAccess
 {
     /// <summary>
-    /// Abstract base class for table entitiues. Handles reading and writing of types not natively handled by
+    /// Abstract base class for table entities. Handles reading and writing of types not natively handled by
     /// table storage.
     /// </summary>
     public abstract class BaseTableEntity : TableEntity, IKeyAccess

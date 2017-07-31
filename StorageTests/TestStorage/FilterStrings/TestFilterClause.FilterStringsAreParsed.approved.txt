@@ -1,0 +1,91 @@
+﻿IEnumerable`1                                                                                                           
+-------------                                                                                                           
+                                                                                                                        
+                                                                                                                        
+    VariableName Value                                                                                                  
+    ------------ ------------------------------------                                                                   
+    var          1                                                                                                      
+    var2         thing                                                                                                  
+    var3         99.5                                                                                                   
+    eq           equals                                                                                                 
+    varg         9e37e338-27b2-4f32-affa-dc74f017af1d                                                                   
+    varL         9223372036854775807                                                                                    
+    PartitionKey 2017-07-30T21:15:09                                                                                    
+    Alpha        Delta                                                                                                  
+    Delta        Beta                                                                                                   
+                                                                                                                        
+Filter string: var eq 1                                                                                                 
+var eq 1                                                                                                                
+                                                                                                                        
+Result = True                                                                                                           
+                                                                                                                        
+                                                                                                                        
+Filter string: var eq 1 and var2 eq 'thing'                                                                             
+var eq 1 and var2 eq thing                                                                                              
+                                                                                                                        
+Result = True                                                                                                           
+                                                                                                                        
+                                                                                                                        
+Filter string: (var eq 1)                                                                                               
+(var eq 1)                                                                                                              
+                                                                                                                        
+Result = True                                                                                                           
+                                                                                                                        
+                                                                                                                        
+Filter string: (var eq 1 or var2 eq 'thing') and var3 gt 56                                                             
+(var eq 1 or var2 eq thing) and var3 gt 56                                                                              
+                                                                                                                        
+Result = True                                                                                                           
+                                                                                                                        
+                                                                                                                        
+Filter string: varg eq guid'9E37E338-27B2-4F32-AFFA-DC74F017AF1D' or (varL ge 45L and var3 ne 35.4)                     
+varg eq 9E37E338-27B2-4F32-AFFA-DC74F017AF1D or (varL ge 45 and var3 ne 35.4)                                           
+                                                                                                                        
+Result = True                                                                                                           
+                                                                                                                        
+                                                                                                                        
+Filter string: eq eq eq                                                                                                 
+eq eq eq                                                                                                                
+                                                                                                                        
+Result = True                                                                                                           
+                                                                                                                        
+                                                                                                                        
+Filter string: (PartitionKey eq '2017-07-30T21:15:09') and((Alpha eq 'Delta') and((Delta eq 'Alpha') or(Delta eq        
+'Beta')))                                                                                                               
+(PartitionKey eq 2017-07-30T21:15:09) and ((Alpha eq Delta) and ((Delta eq Alpha) or (Delta eq Beta)))                  
+                                                                                                                        
+Result = True                                                                                                           
+                                                                                                                        
+                                                                                                                        
+Filter string: (PartitionKey eq '2017-07-30T21:15:09') and((Alpha eq 'Delta') and((Delta eq 'Alpha') or(Delta eq        
+'Gamma')))                                                                                                              
+(PartitionKey eq 2017-07-30T21:15:09) and ((Alpha eq Delta) and ((Delta eq Alpha) or (Delta eq Gamma)))                 
+                                                                                                                        
+Result = False                                                                                                          
+                                                                                                                        
+                                                                                                                        
+Filter string: PartitionKey eq '2017-07-30T21:15:09' and Alpha eq 'Delta' and (Delta eq 'Alpha' or Delta eq 'Beta')     
+PartitionKey eq 2017-07-30T21:15:09 and Alpha eq Delta and (Delta eq Alpha or Delta eq Beta)                            
+                                                                                                                        
+Result = True                                                                                                           
+                                                                                                                        
+                                                                                                                        
+Filter string: PartitionKey eq '2017-07-30T21:15:09' and Alpha eq 'Delta' and (Delta eq 'Alpha' or Delta eq 'Gamma')    
+PartitionKey eq 2017-07-30T21:15:09 and Alpha eq Delta and (Delta eq Alpha or Delta eq Gamma)                           
+                                                                                                                        
+Result = False                                                                                                          
+                                                                                                                        
+                                                                                                                        
+Filter string: PartitionKey eq '2017-07-30T21:15:09' and (Alpha eq 'Delta' and Delta eq 'Alpha' or Delta eq 'Beta')     
+PartitionKey eq 2017-07-30T21:15:09 and (Alpha eq Delta and Delta eq Alpha or Delta eq Beta)                            
+                                                                                                                        
+Result = True                                                                                                           
+                                                                                                                        
+                                                                                                                        
+Filter string: PartitionKey eq '2017-07-30T21:15:09' and (Alpha eq 'Delta' and Delta eq 'Alpha' or Delta eq 'Gamma')    
+PartitionKey eq 2017-07-30T21:15:09 and (Alpha eq Delta and Delta eq Alpha or Delta eq Gamma)                           
+                                                                                                                        
+Result = False                                                                                                          
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        

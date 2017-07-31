@@ -1,6 +1,7 @@
 ﻿using ConsoleToolkit.ApplicationStyles;
 using ConsoleToolkit;
 using asSpike.Commands;
+using ConsoleToolkit.ConsoleIO;
 
 namespace asSpike
 {
@@ -13,6 +14,7 @@ namespace asSpike
 
         protected override void Initialise()
         {
+            Toolkit.SetCommandExceptionHandler((con, err, ex, ob) => err.WrapLine(ex.ToString().Red()));
             base.HelpCommand<HelpCommand>(c => c.Topic);
             base.Initialise();
         }

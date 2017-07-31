@@ -1,6 +1,5 @@
 ﻿using System;
 using asSpike.Entities;
-using AzureStorage.DataAccess;
 using ConsoleToolkit.CommandLineInterpretation.ConfigurationAttributes;
 using ConsoleToolkit.ConsoleIO;
 
@@ -8,7 +7,7 @@ namespace asSpike.Commands.ActivityCommand
 {
     [Command]
     [Description("Add a new activity")]
-    public class ActivityCommand
+    public class ActivityCommand : BaseCommand
     {
         [Positional]
         [Description("The name of the person doing the activity")]
@@ -50,8 +49,7 @@ namespace asSpike.Commands.ActivityCommand
                 Key = Guid.NewGuid()
             };
 
-            var connectionString = Properties.Settings.Default.ConnectionString;
-            var context = new TableContext(Constants.ActivityTable, connectionString, tryCreate: CreateTable);
+            var context = TableContextFactory.Get(this, Constants.ActivityTable, CreateTable);
             context.UpdateAsync(activity).Wait();
         }
     }

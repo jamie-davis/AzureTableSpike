@@ -1,0 +1,19 @@
+﻿1 ge 1 => True                                                                                 
+1 ge 1 => True                                                                                 
+1 ge 1 => True                                                                                 
+2017-07-30T13:00:44 ge 2017-07-30T13:00:44 => True                                             
+9e37e338-27b2-4f32-affa-dc74f017af1d ge 9e37e338-27b2-4f32-affa-dc74f017af1d => True           
+test string ge test string => True                                                             
+2 ge 1 => True                                                                                 
+1.01 ge 1 => True                                                                              
+2 ge 1 => True                                                                                 
+2017-07-30T13:00:45 ge 2017-07-30T13:00:44 => True                                             
+9e37e338-27b2-4f32-affa-dc74f017af1e ge 9e37e338-27b2-4f32-affa-dc74f017af1d => True           
+west string ge test string => True                                                             
+0 ge 1 => False                                                                                
+0.99 ge 1 => False                                                                             
+0 ge 1 => False                                                                                
+2017-07-30T13:00:43 ge 2017-07-30T13:00:44 => False                                            
+9e37e338-27b2-4f32-affa-dc74f017af1c ge 9e37e338-27b2-4f32-affa-dc74f017af1d => False          
+sest string ge test string => False                                                            
+                                                                                               

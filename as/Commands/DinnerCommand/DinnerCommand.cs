@@ -1,6 +1,5 @@
 ﻿using System;
 using asSpike.Entities;
-using AzureStorage.DataAccess;
 using ConsoleToolkit.CommandLineInterpretation.ConfigurationAttributes;
 using ConsoleToolkit.ConsoleIO;
 
@@ -8,7 +7,7 @@ namespace asSpike.Commands.DinnerCommand
 {
     [Command]
     [Description("Add a new activity")]
-    public class DinnerCommand
+    public class DinnerCommand : BaseCommand
     {
         [Positional]
         [Description("Where the meal occurred")]
@@ -32,8 +31,7 @@ namespace asSpike.Commands.DinnerCommand
                 Key = Guid.NewGuid()
             };
 
-            var connectionString = Properties.Settings.Default.ConnectionString;
-            var context = new TableContext(Constants.DinnerTable, connectionString, tryCreate: CreateTable);
+            var context = TableContextFactory.Get(this, Constants.DinnerTable, CreateTable);
             context.AddAsync(activity).Wait();
         }
     }

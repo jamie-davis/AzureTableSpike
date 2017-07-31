@@ -1,4 +1,4 @@
-namespace AzureStorage.DataAccess
+namespace AzureStorage
 {
     public interface IKeyAccess
     {

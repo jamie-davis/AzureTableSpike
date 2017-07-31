@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AzureStorage.DataAccess;
+﻿using asSpike.Commands.ActivitiesCommand;
 using ConsoleToolkit.CommandLineInterpretation.ConfigurationAttributes;
 using ConsoleToolkit.ConsoleIO;
 
@@ -11,7 +6,7 @@ namespace asSpike.Commands.UpdateCommand
 {
     //[Command] /**/
     [Description("Update row and field")]
-    public class UpdateCommand
+    public class UpdateCommand : BaseCommand
     {
         [Positional]
         [Description("The table to update")]
@@ -36,8 +31,7 @@ namespace asSpike.Commands.UpdateCommand
         [CommandHandler]
         public void Handle(IConsoleAdapter console, IErrorAdapter error)
         {
-            var connectionString = Properties.Settings.Default.ConnectionString;
-            var table = new TableContext(Table, connectionString);
+            var context = TableContextFactory.Get(this, Table);
             //table.UpdateAsync()
         }
     }

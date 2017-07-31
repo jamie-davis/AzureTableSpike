@@ -1,0 +1,13 @@
+﻿1 gt 1 => False                                                                                
+1 gt 1 => False                                                                                
+1 gt 1 => False                                                                                
+2017-07-30T13:00:44 gt 2017-07-30T13:00:44 => False                                            
+9e37e338-27b2-4f32-affa-dc74f017af1d gt 9e37e338-27b2-4f32-affa-dc74f017af1d => False          
+test string gt test string => False                                                            
+2 gt 1 => True                                                                                 
+1.01 gt 1 => True                                                                              
+2 gt 1 => True                                                                                 
+2017-07-30T13:00:45 gt 2017-07-30T13:00:44 => True                                             
+9e37e338-27b2-4f32-affa-dc74f017af1e gt 9e37e338-27b2-4f32-affa-dc74f017af1d => True           
+west string gt test string => True                                                             
+                                                                                               

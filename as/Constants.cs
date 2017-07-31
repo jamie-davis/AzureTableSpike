@@ -1,4 +1,4 @@
-﻿namespace AzureStorage.DataAccess
+﻿namespace asSpike
 {
     public static class Constants
     {

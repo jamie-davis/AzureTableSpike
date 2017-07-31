@@ -1,0 +1,47 @@
+﻿Filter string: var eq 1                                                                        
+var eq 1                                                                                       
+                                                                                               
+                                                                                               
+Filter string: var eq 1 and var2 eq 'thing'                                                    
+var eq 1 and var2 eq thing                                                                     
+                                                                                               
+                                                                                               
+Filter string: (var eq 1)                                                                      
+(var eq 1)                                                                                     
+                                                                                               
+                                                                                               
+Filter string: (var eq 1 or var2 eq 'thing') and var3 gt 56                                    
+(var eq 1 or var2 eq thing) and var3 gt 56                                                     
+                                                                                               
+                                                                                               
+Filter string: var eq guid'9E37E338-27B2-4F32-AFFA-DC74F017AF1D' or (var2 ge 45L and var3 ne   
+35.4)                                                                                          
+var eq 9E37E338-27B2-4F32-AFFA-DC74F017AF1D or (var2 ge 45 and var3 ne 35.4)                   
+                                                                                               
+                                                                                               
+Filter string: eq eq eq                                                                        
+eq eq eq                                                                                       
+                                                                                               
+                                                                                               
+Filter string: and                                                                             
+Error: Unable to parse filter string.                                                          
+                                                                                               
+                                                                                               
+Filter string: and and and                                                                     
+Error: Unable to parse filter string.                                                          
+                                                                                               
+                                                                                               
+Filter string: (a eq 1                                                                         
+Error: Unable to parse filter string.                                                          
+                                                                                               
+                                                                                               
+Filter string: a eq 1)                                                                         
+Error: Unable to parse filter string.                                                          
+                                                                                               
+                                                                                               
+Filter string: PartitionKey eq '2017-07-30T21:15:09' and (Alpha eq 'Delta' and (Delta eq       
+'Alpha' or Delta eq 'Beta'))                                                                   
+PartitionKey eq 2017-07-30T21:15:09 and (Alpha eq Delta and (Delta eq Alpha or Delta eq Beta)) 
+                                                                                               
+                                                                                               
+                                                                                               

@@ -1,0 +1,13 @@
+﻿1 eq 1 => True                                                                                 
+1 eq 1 => True                                                                                 
+1 eq 1 => True                                                                                 
+2017-07-30T13:00:44 eq 2017-07-30T13:00:44 => True                                             
+9e37e338-27b2-4f32-affa-dc74f017af1d eq 9e37e338-27b2-4f32-affa-dc74f017af1d => True           
+test string eq test string => True                                                             
+2 eq 1 => False                                                                                
+1.01 eq 1 => False                                                                             
+2 eq 1 => False                                                                                
+2017-07-30T13:00:45 eq 2017-07-30T13:00:44 => False                                            
+9e37e338-27b2-4f32-affa-dc74f017af1e eq 9e37e338-27b2-4f32-affa-dc74f017af1d => False          
+test strinG eq test string => False                                                            
+                                                                                               

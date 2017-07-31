@@ -2,12 +2,13 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AzureStorage.Exceptions;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 
 namespace AzureStorage.DataAccess
 {
-    public class TableContext
+    public class TableContext : ITableContext
     {
         private CloudTable _table;
         private CloudStorageAccount _cloudStorageAccount;
@@ -24,7 +25,7 @@ namespace AzureStorage.DataAccess
                 _table.CreateIfNotExistsAsync();
         }
 
-        public Task AddAsync<T>(T entity) where T : IKeyAccess
+        public Task AddFlattenAsync<T>(T entity) where T : IKeyAccess
         {
             var opcon = new OperationContext();
             var dyn = new DynamicTableEntity(entity.GetPartitionKey(), entity.GetRowKey())
@@ -32,6 +33,20 @@ namespace AzureStorage.DataAccess
                 Properties = TableEntity.Flatten(entity, opcon)
             };
             var op = TableOperation.Insert(dyn);
+            return _table.ExecuteAsync(op);
+        }
+
+        public Task AddAsync<T>(T entity) where T : BaseTableEntity
+        {
+            entity.PopulateDefaultKeys();
+            var op = TableOperation.Insert(entity);
+            return _table.ExecuteAsync(op);
+        }
+
+        public Task AddOrReplaceAsync<T>(T entity) where T : BaseTableEntity
+        {
+            entity.PopulateDefaultKeys();
+            var op = TableOperation.InsertOrMerge(entity);
             return _table.ExecuteAsync(op);
         }
 
@@ -43,7 +58,7 @@ namespace AzureStorage.DataAccess
             return result.GetConsumingEnumerable();
         }
 
-        public Task<T> GetAsync<T>(string partitionKey, string rowKey) where T : BaseTableEntity
+        public Task<T> GetAsync<T>(string partitionKey, string rowKey) where T : BaseTableEntity, new()
         {
             var operation = TableOperation.Retrieve<T>(partitionKey, rowKey);
 

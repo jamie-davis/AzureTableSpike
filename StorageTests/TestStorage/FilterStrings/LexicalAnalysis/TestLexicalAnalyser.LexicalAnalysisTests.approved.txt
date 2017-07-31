@@ -1,0 +1,67 @@
+﻿Analysis of "var eq 'literal'":                                                                
+Token Type    Text                                                                             
+------------- -------                                                                          
+Identifier    var                                                                              
+CompEq        eq                                                                               
+StringLiteral literal                                                                          
+                                                                                               
+                                                                                               
+Analysis of "(var gt 'literal' and var2 lt 45) or (datevar gt datetime'2017-07-21T22:02:31Z')":
+Token Type      Text                                                                           
+--------------- --------------------                                                           
+OpenParen       (                                                                              
+Identifier      var                                                                            
+CompGt          gt                                                                             
+StringLiteral   literal                                                                        
+LogicalAnd      and                                                                            
+Identifier      var2                                                                           
+CompLt          lt                                                                             
+IntLiteral      45                                                                             
+CloseParen      )                                                                              
+LogicalOr       or                                                                             
+OpenParen       (                                                                              
+Identifier      datevar                                                                        
+CompGt          gt                                                                             
+DateTimeLiteral 2017-07-21T22:02:31Z                                                           
+CloseParen      )                                                                              
+                                                                                               
+                                                                                               
+Analysis of "var eq guid'9E37E338-27B2-4F32-AFFA-DC74F017AF1D' or (var2 ge 45L and var3 ne 35. 
+4)":                                                                                           
+Token Type    Text                                                                             
+------------- ------------------------------------                                             
+Identifier    var                                                                              
+CompEq        eq                                                                               
+GuidLiteral   9E37E338-27B2-4F32-AFFA-DC74F017AF1D                                             
+LogicalOr     or                                                                               
+OpenParen     (                                                                                
+Identifier    var2                                                                             
+CompGe        ge                                                                               
+LongLiteral   45                                                                               
+LogicalAnd    and                                                                              
+Identifier    var3                                                                             
+CompNe        ne                                                                               
+DoubleLiteral 35.4                                                                             
+CloseParen    )                                                                                
+                                                                                               
+                                                                                               
+Analysis of "":                                                                                
+Token Type   Text                                                                              
+------------ ----                                                                              
+                                                                                               
+                                                                                               
+Analysis of "NULL":                                                                            
+Token Type   Text                                                                              
+------------ ----                                                                              
+                                                                                               
+                                                                                               
+Analysis of "        var        eq                                                             
+'literal'":                                                                                    
+Token Type    Text                                                                             
+------------- -------                                                                          
+Identifier    var                                                                              
+CompEq        eq                                                                               
+StringLiteral literal                                                                          
+                                                                                               
+                                                                                               
+                                                                                               

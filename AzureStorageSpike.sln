@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "as", "as\as.csproj", "{39374B64-B8FD-4D6A-94A7-849B8262E81C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureStorage", "AzureStorage\AzureStorage.csproj", "{994F9A08-2D64-4E02-820D-1E0D05616203}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureStorage", "AzureStorage\AzureStorage.csproj", "{994F9A08-2D64-4E02-820D-1E0D05616203}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestStorage", "TestStorage\TestStorage.csproj", "{28245B4C-EE1C-4780-8427-E53F6D09310A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageTests", "StorageTests\StorageTests.csproj", "{AF929FC4-B4F9-49AC-9B50-DE980F06D592}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{994F9A08-2D64-4E02-820D-1E0D05616203}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{994F9A08-2D64-4E02-820D-1E0D05616203}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{994F9A08-2D64-4E02-820D-1E0D05616203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28245B4C-EE1C-4780-8427-E53F6D09310A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28245B4C-EE1C-4780-8427-E53F6D09310A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28245B4C-EE1C-4780-8427-E53F6D09310A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28245B4C-EE1C-4780-8427-E53F6D09310A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF929FC4-B4F9-49AC-9B50-DE980F06D592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF929FC4-B4F9-49AC-9B50-DE980F06D592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF929FC4-B4F9-49AC-9B50-DE980F06D592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF929FC4-B4F9-49AC-9B50-DE980F06D592}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

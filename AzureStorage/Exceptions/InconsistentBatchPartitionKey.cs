@@ -1,6 +1,6 @@
 using System;
 
-namespace AzureStorage.DataAccess
+namespace AzureStorage.Exceptions
 {
     public class InconsistentBatchPartitionKey : Exception
     {
