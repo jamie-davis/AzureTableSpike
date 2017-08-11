@@ -66,7 +66,7 @@ namespace TestStorage.TableStoreImpl
         {
             var row = GetRow(rowKey);
             if (row == null)
-                throw new RowKeyNotFound();
+                return null;
 
             return row.CopyFields();
         }

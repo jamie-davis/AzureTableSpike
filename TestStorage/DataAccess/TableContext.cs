@@ -78,6 +78,9 @@ namespace TestStorage.DataAccess
         {
             var operationContext = new OperationContext();
             var fields = _tableStore.GetFields(_table, partitionKey, rowKey);
+            if (fields == null)
+                return null;
+
             var entity = new T();
             entity.ReadEntity(fields, operationContext);
             return entity;

@@ -69,6 +69,24 @@ namespace asSpike.Commands.TestCommand
 
                 table.DeleteAsync(entities[9]).Wait();
 
+                console.WrapLine("Retrieving deleted item");
+
+                var deletedItem = table.GetAsync<TestEntity>(entities[9].PartitionKey, entities[9].RowKey).Result;
+                if (deletedItem == null)
+                    console.WrapLine("Deleted item not found");
+                else
+                    console.WrapLine("Deleted item found".Red());
+
+                console.WrapLine("Performing delete again");
+                try
+                {
+                    table.DeleteAsync(entities[9]).Wait();
+                }
+                catch
+                {
+                    console.WrapLine("Caught exception");
+                }
+
                 console.WrapLine("Performing individual update");
                 entities[10].Beta = "Updated (Individual)";
                 table.UpdateAsync(entities[10]).Wait();
