@@ -1,5 +1,4 @@
 ﻿using AzureStorage;
-using TestStorage.DataAccess;
 using TestStorage.TableStoreImpl;
 using TableContext = AzureStorage.DataAccess.TableContext;
 

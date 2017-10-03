@@ -79,6 +79,8 @@
     <Compile Include="Commands\ActivitiesCommand\ActivitiesCommand.cs" />
     <Compile Include="Commands\BaseCommand.cs" />
     <Compile Include="Commands\ActivityCommand\ActivityCommand.cs" />
+    <Compile Include="Commands\BlobCommand\BlobCommand.cs" />
+    <Compile Include="Commands\BlobContextFactory.cs" />
     <Compile Include="Commands\DinnerCommand\DinnerCommand.cs" />
     <Compile Include="Commands\HelpCommand.cs" />
     <Compile Include="Commands\TableContextFactory.cs" />

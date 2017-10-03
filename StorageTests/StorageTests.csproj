@@ -66,6 +66,9 @@
     <Reference Include="System.Spatial, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.8.2\lib\net40\System.Spatial.dll</HintPath>
     </Reference>
+    <Reference Include="System.Threading.Thread, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Thread.4.3.0\lib\net46\System.Threading.Thread.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,12 +85,18 @@
     <Compile Include="TestStorage\FilterStrings\TestFilterStringParser.cs" />
     <Compile Include="TestStorage\FilterStrings\LexicalAnalysis\TestLexicalAnalyser.cs" />
     <Compile Include="TestStorage\FilterStrings\TestTokenValue.cs" />
+    <Compile Include="TestStorage\Utilities\TestFeedingQueue.cs" />
+    <Compile Include="TestStorage\Utilities\TestFeedingStream.cs" />
     <Compile Include="TestUtilities\CustomReporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AzureStorage\AzureStorage.csproj">
+      <Project>{994f9a08-2d64-4e02-820d-1e0d05616203}</Project>
+      <Name>AzureStorage</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestStorage\TestStorage.csproj">
       <Project>{28245b4c-ee1c-4780-8427-e53f6d09310a}</Project>
       <Name>TestStorage</Name>
