@@ -16,7 +16,7 @@ namespace TestStorage.DataAccess
 
         public IBlobContainer GetContainer(string containerName)
         {
-            throw new System.NotImplementedException();
+            return _blobStore.GetContainer(containerName);
         }
 
         #endregion
